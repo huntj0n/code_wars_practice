@@ -28,3 +28,18 @@ function lovefunc(flower1, flower2) {
 // function lovefunc(flower1, flower2){
 //     return (flower1 + flower2) % 2 == 1;
 //   }
+
+//----------------------------------------------------------------
+//CONVERT NUMBERR TO REVERSED ARRAY OF DIGITS
+// Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+
+let num = 35231;
+
+function digitize(n) {
+  //code here
+  //   const reversed = n.toString().split("").reverse().map(Number);
+  //   return reversed;
+  return String(n).split("").map(Number).reverse();
+}
+
+digitize(num);
