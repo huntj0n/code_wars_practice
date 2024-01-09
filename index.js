@@ -68,3 +68,26 @@ function getSum(a, b) {
   }
   return sum;
 }
+
+// const GetSum = (a, b) => {
+//     let min = Math.min(a, b),
+//         max = Math.max(a, b);
+//     return (max - min + 1) * (min + max) / 2;
+//   }
+
+// function GetSum(a,b)
+// {
+//   return (Math.abs(a - b) + 1) * (a+b) / 2;
+// }
+
+//
+// Simple Multiplication
+
+//This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+function simpleMultiplication(number) {
+  // your code........
+  return number % 2 === 0 ? number * 8 : number * 9;
+}
+//function simpleMultiplication(n) {
+//     return n * (n % 2 ? 9 : 8);
+// }
