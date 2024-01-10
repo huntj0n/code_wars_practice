@@ -91,3 +91,34 @@ function simpleMultiplication(number) {
 //function simpleMultiplication(n) {
 //     return n * (n % 2 ? 9 : 8);
 // }
+
+//
+//ISOGRRAM
+//
+//An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+
+function isIsogram(str) {
+  //...
+  chars = [];
+  for (let i = 0; i < str.length; i++) {
+    const newChar = str[i].toLowerCase();
+    if (chars.find((char) => char === newChar)) {
+      return false;
+    }
+    chars.push(newChar);
+  }
+  return true;
+}
+
+// function isIsogram(str){
+// 	return new Set(str.toUpperCase()).size == str.length;
+// }
+
+function isIsogram(str) {
+  return !str.match(/([a-z]).*\1/i);
+}
+
+function isIsogram(str) {
+  return !/(\w).*\1/i.test(str);
+}
+//z.
