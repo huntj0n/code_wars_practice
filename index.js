@@ -114,11 +114,21 @@ function isIsogram(str) {
 // 	return new Set(str.toUpperCase()).size == str.length;
 // }
 
-function isIsogram(str) {
-  return !str.match(/([a-z]).*\1/i);
-}
+// function isIsogram(str) {
+//   return !str.match(/([a-z]).*\1/i);
+// }
 
-function isIsogram(str) {
-  return !/(\w).*\1/i.test(str);
+// function isIsogram(str) {
+//   return !/(\w).*\1/i.test(str);
+// }
+// //z.
+
+//////////////
+// You Can't Code Under Pressure #1 //
+// {8}kyu
+//////////////
+//Code as fast as you can! You need to double the integer and return it.
+function doubleInteger(i) {
+  // i will be an integer. Double it and return it.
+  return i * 2;
 }
-//z.
