@@ -157,3 +157,16 @@ function removeChar(str) {
 // if bmi <= 30.0 return "Overweight"
 
 // if bmi > 30 return "Obese"
+
+function bmi(weight, height) {
+  const bmi = weight / (height * height);
+  let result;
+  if (bmi <= 18.5) result = "Underweight";
+  if (bmi <= 25 && bmi > 18.5) result = "Normal";
+  if (bmi <= 30 && bmi > 25) result = "Overweight";
+  if (bmi > 30) result = "Obese";
+  return `${result}`;
+}
+// const bmi = (w, h, bmi = w/h/h) =>  bmi <= 18.5 ? "Underweight" :
+//                                     bmi <= 25 ? "Normal" :
+//                                     bmi <= 30 ? "Overweight" : "Obese";
