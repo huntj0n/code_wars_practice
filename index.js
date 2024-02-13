@@ -242,3 +242,43 @@ function tribonacci(signature, n) {
   }
   return trib.slice(0, n);
 }
+
+// function tribonacci(signature,n) {
+//   const result = signature.slice(0, n);
+//   while (result.length < n) {
+//     result[result.length] = result.slice(-3).reduce((p,c) => p + c, 0);
+//   }
+//   return result;
+// }
+
+// function tribonacci(s,n){
+//   var arr = [];
+//   for(var i=0; i<n; i++) {
+//     arr.push((i<3) ? s[i] : arr[i-1]+arr[i-2]+arr[i-3]);
+//   }
+//   return arr;
+// }
+
+/////////////
+// Sum of two lowest positive integers
+// {7kyu}
+////////////
+// Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
+
+// For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
+
+// [10, 343445353, 3453445, 3453545353453] should return 3453455.
+function sumTwoSmallestNumbers(numbers) {
+  //Code here
+  let [x, y] = numbers.sort((a, b) => a - b);
+  return x + y;
+}
+
+// function sumTwoSmallestNumbers(numbers){
+//   numbers = numbers.sort(function(a, b){return a - b; });
+//   return numbers[0] + numbers[1];
+// };
+// function sumTwoSmallestNumbers(numbers) {
+//   numbers.sort((a,b) => a - b);
+//   return numbers[0] + numbers[1];
+// };
