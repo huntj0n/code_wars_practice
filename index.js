@@ -295,3 +295,8 @@ function sumTwoSmallestNumbers(numbers) {
 // "Robin Singh" ==> ["Robin", "Singh"]
 
 // "I love arrays they are my favorite" ==> ["I", "love", "arrays", "they", "are", "my", "favorite"]
+// function stringToArray(string) {
+//   // code code code
+//   return string.split(" ");
+// }
+const stringToArray = (string) => string.split(" ");
