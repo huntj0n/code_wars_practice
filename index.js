@@ -300,3 +300,20 @@ function sumTwoSmallestNumbers(numbers) {
 //   return string.split(" ");
 // }
 const stringToArray = (string) => string.split(" ");
+
+/////////////
+// Square(n) Sum
+// {8 kyu}
+////////////
+// Complete the square sum function so that it squares each number passed into it and then sums the results together.
+// For example, for [1, 2, 2] it should return 9 because 1^2+2^2+2^2=9
+function squareSum(numbers) {
+  return numbers
+    .map((n) => n * n)
+    .reduce((total, n) => {
+      return total + n;
+    }, 0);
+}
+function squareSum_reduce(numbers) {
+  return numbers.reduce((sum, num) => sum + num * num, 0);
+}
