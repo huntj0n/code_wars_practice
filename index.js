@@ -317,3 +317,39 @@ function squareSum(numbers) {
 function squareSum_reduce(numbers) {
   return numbers.reduce((sum, num) => sum + num * num, 0);
 }
+
+/////////////
+// Duplicate Encoder
+// {6 kyu}
+////////////
+// The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+//ex:
+//"din"      =>  "((("
+// "recede"   =>  "()()()"
+// "Success"  =>  ")())())"
+// "(( @"     =>  "))(("
+
+// const duplicateEncode = (word) => {
+//   let newString = "";
+//   word = word.toLowerCase() || word;
+//   word.split("").filter((x, index) => {
+//     if (word.indexOf(x) !== index) {
+//       newString += ")";
+//     } else if (word.lastIndexOf(x) !== index) {
+//       newString += ")";
+//     } else {
+//       newString += "(";
+//     }
+//   });
+//   return newString;
+// };
+
+function duplicateEncode(word) {
+  return word
+    .toLowerCase()
+    .split("")
+    .map(function (a, i, w) {
+      return w.indexOf(a) == w.lastIndexOf(a) ? "(" : ")";
+    })
+    .join("");
+}
