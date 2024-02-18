@@ -372,3 +372,26 @@ const find_average = (array) => {
     ? 0
     : array.reduce((acc, ind) => acc + ind, 0) / array.length;
 };
+function find_average3(arr) {
+  return arr.length > 0 ? arr.reduce((a, b) => a + b) / arr.length : 0;
+}
+const find_average4 = (array) =>
+  array.reduce((acc, curr) => acc + curr, 0) / array.length || 0;
+
+/////////////
+// Shortest Word
+// {7 kyu}
+////////////
+//Simple, given a string of words, return the length of the shortest word(s).
+//String will never be empty and you do not need to account for different data types.
+const findShort = (s) =>
+  Math.min.apply(
+    this,
+    s.split(" ").map((el) => el.length)
+  );
+
+const findShort2 = (s) => Math.min(...s.split(" ").map((el) => el.length));
+
+function findShort3(s) {
+  return Math.min(...s.split(" ").map((s) => s.length));
+}
