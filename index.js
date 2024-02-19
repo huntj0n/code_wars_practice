@@ -412,3 +412,15 @@ const grow = (x) => x.reduce((acc, cur) => acc * cur);
 // Examples:
 // solution('abc', 'bc') // returns true
 // solution('abc', 'd') // returns false
+function solution(str, ending) {
+  // TODO: complete
+  if (typeof str != "string" || typeof ending != "string") {
+    return false;
+  } else {
+    return str.toLowerCase().endsWith(ending.toLowerCase());
+  }
+}
+
+function solutionWaySimpler(str, ending) {
+  return str.endsWith(ending);
+}
