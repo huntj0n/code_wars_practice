@@ -395,3 +395,20 @@ const findShort2 = (s) => Math.min(...s.split(" ").map((el) => el.length));
 function findShort3(s) {
   return Math.min(...s.split(" ").map((s) => s.length));
 }
+
+/////////////
+// Reduce but Grow
+// {8 kyu}
+////////////
+// Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
+// [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+const grow = (x) => x.reduce((acc, cur) => acc * cur);
+
+/////////////
+// String Ends With?
+// {7 kyu}
+////////////
+// Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+// Examples:
+// solution('abc', 'bc') // returns true
+// solution('abc', 'd') // returns false
