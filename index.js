@@ -619,8 +619,23 @@ const betterThanAverage = (classPoints, yourPoints) =>
   classPoints.reduce((prev, curr) => prev + curr) / classPoints.length <
   yourPoints;
 
-const betterThanAverage2 = (classPoints, yourPoints) =>
-  (classPoints.reduce((prev, curr) => prev + curr) + yourPoints) /
-    classPoints.length +
-    1 <
-  yourPoints;
+//this is what I think it should be. your score would raise or lower the average. I dont like this kata.
+// const betterThanAverage2 = (classPoints, yourPoints) =>
+//   (classPoints.reduce((prev, curr) => prev + curr) + yourPoints) /
+//     classPoints.length +
+//     1 <
+//   yourPoints;
+
+/////////////
+// Number of People in the Bus
+// {7 kyu}
+////////////
+//There is a bus moving in the city which takes and drops some people at each bus stop.
+// You are provided with a list (or array) of integer pairs. Elements of each pair represent the number of people that get on the bus (the first item) and the number of people that get off the bus (the second item) at a bus stop.
+// Your task is to return the number of people who are still on the bus after the last bus stop (after the last array). Even though it is the last bus stop, the bus might not be empty and some people might still be inside the bus, they are probably sleeping there :D
+// Take a look on the test cases.
+// Please keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the returned integer can't be negative.
+// The second value in the first pair in the array is 0, since the bus is empty in the first bus stop.
+const number = function (busStops) {
+  // Good Luck!
+};
