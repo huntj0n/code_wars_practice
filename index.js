@@ -592,3 +592,35 @@ function count(num, times = 0) {
 function persistence(num) {
   return count(num);
 }
+
+/////////////
+// How good are you really?
+// {8 kyu}
+////////////
+// There was a test in your class and you passed it. Congratulations!
+// But you're an ambitious person. You want to know if you're better than the average student in your class.
+// You receive an array with your peers' test scores. Now calculate the average and compare your score!
+// Return True if you're better, else False!
+// Note:
+// Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
+
+//went along these lines to calculate the average while including yourPoints as is mentioned in the Note, never worked
+// function betterThanAverage(classPoints, yourPoints) {
+//   // Your code here
+//   let average =
+//     classPoints.reduce(function (sum, cur) {
+//       return sum + cur;
+//     }, 0) /
+//     ((average + yourPoints) / classPoints.length + 1);
+//   return yourPoints > average ? true : false;
+// }
+
+const betterThanAverage = (classPoints, yourPoints) =>
+  classPoints.reduce((prev, curr) => prev + curr) / classPoints.length <
+  yourPoints;
+
+const betterThanAverage2 = (classPoints, yourPoints) =>
+  (classPoints.reduce((prev, curr) => prev + curr) + yourPoints) /
+    classPoints.length +
+    1 <
+  yourPoints;
