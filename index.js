@@ -636,6 +636,15 @@ const betterThanAverage = (classPoints, yourPoints) =>
 // Take a look on the test cases.
 // Please keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the returned integer can't be negative.
 // The second value in the first pair in the array is 0, since the bus is empty in the first bus stop.
-const number = function (busStops) {
+const numberForLoop = function (busStops) {
   // Good Luck!
+  let result = 0;
+  for (let i = 0; i < busStops.length; i++) {
+    result += busStops[i][0] - busStops[i][1];
+  }
+  return result;
 };
+
+const number = (busStops) =>
+  busStops.reduce((prev, [on, off]) => prev + on - off, 0);
+//regular reduce  with  {(previous, current) and initial}, instead of current you destructure the nested array to pull out the number of riders getting on and those getting off. EZPZ
