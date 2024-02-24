@@ -666,11 +666,13 @@ const number = (busStops) =>
 //  4  =>  true
 // 25  =>  true
 // 26  =>  false
-var isSquare = function (n) {
+var isSquareLONG = function (n) {
   if (n < 0) return false;
   for (let i = 0; i <= n; i++) {
     if (i ** 2 == n) return true;
     else continue;
-    return false;
   }
+  return false;
 };
+//Math.sqrt(n) is a lot faster. basically if theres a remainder it cant be a square root.
+const isSquare = (n) => Math.sqrt(n) % 1 == 0;
