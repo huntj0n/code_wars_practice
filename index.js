@@ -933,7 +933,8 @@ function findNb2(m) {
 // The highest profit wins!
 // {7 kyu}
 /////////////
-/*Ben has a very simple idea to make some profit: he buys something and sells it again. Of course, this wouldn't give him any profit at all if he was simply to buy and sell it at the same price. Instead, he's going to buy it for the lowest possible price and sell it at the highest.
+/*
+Ben has a very simple idea to make some profit: he buys something and sells it again. Of course, this wouldn't give him any profit at all if he was simply to buy and sell it at the same price. Instead, he's going to buy it for the lowest possible price and sell it at the highest.
 
 Task
 Write a function that returns both the minimum and maximum number of the given list/array.
@@ -944,3 +945,26 @@ Examples (Input --> Output)
 [1]         --> [1,1]
 */
 const minMax = (arr) => [Math.min(...arr), Math.max(...arr)];
+
+/////////////
+// L1: Set Alarm
+// {8 kyu}
+/////////////
+/*
+Write a function named setAlarm/set_alarm/set-alarm/setalarm (depending on language) which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
+
+The function should return true if you are employed and not on vacation (because these are the circumstances under which you need to set an alarm). It should return false otherwise. Examples:
+
+employed | vacation 
+true     | true     => false
+true     | false    => true
+false    | true     => false
+false    | false    => false
+*/
+const setAlarm = (employed, vacation) => {
+  if (employed === true && vacation === false) return true;
+  else return false;
+};
+
+//was really close to this second one myself but was adding a bit so it didnt work. But was on the right track
+const setAlarm2 = (employed, vacation) => employed && !vacation;
