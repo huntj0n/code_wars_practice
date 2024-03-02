@@ -1027,3 +1027,31 @@ function twoSum2(numbers, target) {
     seen.set(x, i);
   }
 }
+
+/////////////
+// Testing 1-2-3
+// {7 kyu}
+/////////////
+/*
+Your team is writing a fancy new text editor and you've been tasked with implementing the line numbering.
+
+Write a function which takes a list of strings and returns each line prepended by the correct number.
+
+The numbering starts at 1. The format is n: string. Notice the colon and space in between.
+
+Examples: (Input --> Output)
+
+[] --> []
+["a", "b", "c"] --> ["1: a", "2: b", "3: c"]
+*/
+
+//change variable to number in the kata or this wont work (but cant save it as number error free)
+const numbering = (arr) => {
+  const spacing = [];
+  for (i = 0; i < arr.length; i++) {
+    spacing.push(`${i + 1}: ${arr[i]}`);
+  }
+  return spacing;
+};
+
+const numbering2 = (a) => a.map((v, i) => `${i + 1}: ${v}`);
