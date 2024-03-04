@@ -1106,3 +1106,16 @@ function bouncingBall2(h, bounce, window) {
     while (h > window) (rebounds += 2), (h *= bounce);
   return rebounds;
 }
+
+/////////////
+// Remove exclamation marks
+// {8 kyu}
+/////////////
+/*
+Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+*/
+const removeExclamationMarks = (s) => s.replace(/\!/g, "");
+
+function removeExclamationMarks2(s) {
+  return s.replaceAll("!", "");
+}
