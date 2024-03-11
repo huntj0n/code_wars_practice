@@ -1283,3 +1283,70 @@ const accum = (s) =>
     .split("")
     .map((el, i) => el.toUpperCase() + el.repeat(i))
     .join("-");
+
+/////////////
+// Build Tower
+// {6 kyu}
+/////////////
+/*
+Build a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with "*" character.
+
+For example, a tower with 3 floors looks like this:
+
+[
+  "  *  ",
+  " *** ", 
+  "*****"
+]
+And a tower with 6 floors looks like this:
+
+[
+  "     *     ", 
+  "    ***    ", 
+  "   *****   ", 
+  "  *******  ", 
+  " ********* ", 
+  "***********"
+]
+*/
+function towerBuilder(nFloors) {
+  let space,
+    star,
+    tower = [];
+
+  for (let i = 1; i <= nFloors; i++) {
+    space = " ".repeat(nFloors - i);
+    star = "*".repeat(2 * i - 1);
+    tower.push(`${space}${star}${space}`);
+  }
+
+  return tower;
+}
+
+function towerBuilder2(n) {
+  return Array.from({ length: n }, function (v, k) {
+    const spaces = " ".repeat(n - k - 1);
+    return spaces + "*".repeat(k + k + 1) + spaces;
+  });
+}
+
+function towerBuilder3(n) {
+  return [...Array(n)].map(
+    (_, i) =>
+      " ".repeat(n - 1 - i) + "*".repeat(i * 2 + 1) + " ".repeat(n - 1 - i)
+  );
+}
+
+/////////////
+// Reverse Strings
+// {8 kyu}
+/////////////
+/*
+Complete the solution so that it reverses the string passed into it.
+
+'world'  =>  'dlrow'
+'word'   =>  'drow'
+*/
+const solutionReverse = (str) => str.split("").reverse().join("");
+
+const solutionReverse2 = (s) => [...s].reverse().join("");
