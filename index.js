@@ -1558,3 +1558,31 @@ const plus5 = (f) => (n) => n + f;
 const minus5 = (f) => (n) => n - f;
 const times5 = (f) => (n) => n * f;
 const dividedBy5 = (f) => (n) => Math.floor(n / f);
+
+/////////////
+// Exes and Ohs
+// {7 kyu}
+/////////////
+/*
+Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+
+Examples input/output:
+
+XO("ooxx") => true
+XO("xooxx") => false
+XO("ooxXm") => true
+XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+XO("zzoo") => false
+*/
+function XO(str) {
+  const ohs = (str.toLowerCase().match(/o/g) || []).length;
+  const exs = (str.toLowerCase().match(/x/g) || []).length;
+
+  return ohs === exs ? true : false;
+}
+
+function XO2(str) {
+  let x = str.match(/x/gi);
+  let o = str.match(/o/gi);
+  return (x && x.length) === (o && o.length);
+}
