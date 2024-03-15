@@ -1380,3 +1380,181 @@ function descendingOrder3(n) {
     })
     .join("");
 }
+
+/////////////
+// Calculating with Functions
+// {5 kyu}
+/////////////
+/*
+This time we want to write calculations using functions and get the results. Let's have a look at some examples:
+
+seven(times(five())); // must return 35
+four(plus(nine())); // must return 13
+eight(minus(three())); // must return 5
+six(dividedBy(two())); // must return 3
+Requirements:
+
+There must be a function for each number from 0 ("zero") to 9 ("nine")
+There must be a function for each of the following mathematical operations: plus, minus, times, dividedBy
+Each calculation consist of exactly one operation and two numbers
+The most outer function represents the left operand, the most inner function represents the right operand
+Division should be integer division. For example, this should return 2, not 2.666666...:
+eight(dividedBy(three()));
+*/
+function executeValue(callback, value) {
+  return typeof callback === "function" ? callback(value) : value;
+}
+
+function zero(callback) {
+  const value = 0;
+  return executeValue(callback, value);
+}
+function one(callback) {
+  const value = 1;
+  return executeValue(callback, value);
+}
+function two(callback) {
+  const value = 2;
+  return executeValue(callback, value);
+}
+function three(callback) {
+  const value = 3;
+  return executeValue(callback, value);
+}
+function four(callback) {
+  const value = 4;
+  return executeValue(callback, value);
+}
+function five(callback) {
+  const value = 5;
+  return executeValue(callback, value);
+}
+function six(callback) {
+  const value = 6;
+  return executeValue(callback, value);
+}
+function seven(callback) {
+  const value = 7;
+  return executeValue(callback, value);
+}
+function eight(callback) {
+  const value = 8;
+  return executeValue(callback, value);
+}
+function nine(callback) {
+  const value = 9;
+  return executeValue(callback, value);
+}
+
+function plus(a) {
+  return function (b) {
+    return a + b;
+  };
+}
+function minus(a) {
+  return function (b) {
+    return b - a; //doesnt work with a - b
+  };
+}
+function times(a) {
+  return function (b) {
+    return a * b;
+  };
+}
+function dividedBy(a) {
+  return function (b) {
+    return Math.floor(b / a); //doesnt work as a / b
+  };
+}
+
+function zero1(fn) {
+  return fn ? fn(0) : 0;
+}
+function one1(fn) {
+  return fn ? fn(1) : 1;
+}
+function two1(fn) {
+  return fn ? fn(2) : 2;
+}
+function three1(fn) {
+  return fn ? fn(3) : 3;
+}
+function four1(fn) {
+  return fn ? fn(4) : 4;
+}
+function five1(fn) {
+  return fn ? fn(5) : 5;
+}
+function six1(fn) {
+  return fn ? fn(6) : 6;
+}
+function seven1(fn) {
+  return fn ? fn(7) : 7;
+}
+function eight1(fn) {
+  return fn ? fn(8) : 8;
+}
+function nine1(fn) {
+  return fn ? fn(9) : 9;
+}
+
+function plus1(n) {
+  return function (v) {
+    return v + n;
+  };
+}
+function minus1(n) {
+  return function (v) {
+    return v - n;
+  };
+}
+function times1(n) {
+  return function (v) {
+    return v * n;
+  };
+}
+function dividedBy1(n) {
+  return function (v) {
+    return v / n;
+  };
+}
+
+const zero3 = (a) => (a ? a(0) : 0);
+const one3 = (a) => (a ? a(1) : 1);
+const two3 = (a) => (a ? a(2) : 2);
+const three3 = (a) => (a ? a(3) : 3);
+const four3 = (a) => (a ? a(4) : 4);
+const five3 = (a) => (a ? a(5) : 5);
+const six3 = (a) => (a ? a(6) : 6);
+const seven3 = (a) => (a ? a(7) : 7);
+const eight3 = (a) => (a ? a(8) : 8);
+const nine3 = (a) => (a ? a(9) : 9);
+
+const plus3 = (a) => (b) => a + b;
+const minus3 = (a) => (b) => b - a;
+const dividedBy3 = (a) => (b) => Math.floor(b / a);
+const times3 = (a) => (b) => a * b;
+
+const [zero4, one4, two4, three4, four4, five4, six4, seven4, eight4, nine4] = [
+  ...Array(10),
+].map((_, idx) => (fn) => fn ? fn(idx) : idx);
+const [plus4, minus4, times4, dividedBy4] = [`+`, `-`, `*`, `/`].map(
+  (val) => new Function(`b`, `return a => a ${val} b ^ 0`)
+);
+
+const n5 = (d) => (f) => f ? f(d) : d;
+const zero5 = n(0);
+const one5 = n(1);
+const two5 = n(2);
+const three5 = n(3);
+const four5 = n(4);
+const five5 = n(5);
+const six5 = n(6);
+const seven5 = n(7);
+const eight5 = n(8);
+const nine5 = n(9);
+
+const plus5 = (f) => (n) => n + f;
+const minus5 = (f) => (n) => n - f;
+const times5 = (f) => (n) => n * f;
+const dividedBy5 = (f) => (n) => Math.floor(n / f);
