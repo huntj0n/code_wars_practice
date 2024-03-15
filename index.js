@@ -1586,3 +1586,39 @@ function XO2(str) {
   let o = str.match(/o/gi);
   return (x && x.length) === (o && o.length);
 }
+
+/////////////
+// Ones and Zeros
+// {7 kyu}
+/////////////
+/*
+Given an array of ones and zeroes, convert the equivalent binary value to an integer.
+
+Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
+
+Examples:
+
+Testing: [0, 0, 0, 1] ==> 1
+Testing: [0, 0, 1, 0] ==> 2
+Testing: [0, 1, 0, 1] ==> 5
+Testing: [1, 0, 0, 1] ==> 9
+Testing: [0, 0, 1, 0] ==> 2
+Testing: [0, 1, 1, 0] ==> 6
+Testing: [1, 1, 1, 1] ==> 15
+Testing: [1, 0, 1, 1] ==> 11
+However, the arrays can have varying lengths, not just limited to 4.
+*/
+const binaryArrayToNumberFOR4s = (arr) => {
+  let bin;
+  if (arr[0] === 1) bin += 8;
+  if (arr[1] === 1) bin += 4;
+  if (arr[2] === 1) bin += 2;
+  if (arr[3] === 1) bin += 1;
+  return bin;
+};
+
+const binaryArrayToNumber = (arr) => parseInt(arr.join(""), 2);
+
+const binaryArrayToNumber2 = (arr) => {
+  return arr.reduce((total, cur) => (total = total * 2 + cur), 0);
+};
