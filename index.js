@@ -1,5 +1,7 @@
 "use strict";
 
+const { parse } = require("dotenv");
+
 //OPPOSITES ATTRACT
 // Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower each. If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
 
@@ -1622,3 +1624,98 @@ const binaryArrayToNumber = (arr) => parseInt(arr.join(""), 2);
 const binaryArrayToNumber2 = (arr) => {
   return arr.reduce((total, cur) => (total = total * 2 + cur), 0);
 };
+
+/////////////
+// Highest Scoring Word
+// {6 kyu}
+/////////////
+/*
+Given a string of words, you need to find the highest scoring word.
+
+Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.
+
+For example, the score of abad is 8 (1 + 2 + 1 + 4).
+
+You need to return the highest scoring word as a string.
+
+If two words score the same, return the word that appears earliest in the original string.
+
+All letters will be lowercase and all inputs will be valid.
+*/
+function high0(x) {
+  const arr = x.split(" ");
+  let result = arr[1];
+  arr.forEach((word) => {
+    parseInt(word, 36) > parseInt(result, 36)
+      ? (result = word)
+      : (result = result);
+  });
+  return result;
+}
+
+function high1(x) {
+  const arr = x.split(" ");
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  let result = arr[0];
+
+  const nums = arr.map((word) => {
+    let value = 0;
+    for (i = 0; i < word.length; i++) {
+      value += alphabet.indexOf(i);
+    }
+  });
+
+  nums.forEach((word) => {
+    word > result ? (result = word) : (result = result);
+  });
+  return result;
+}
+
+//this is from substack
+function highSUBMITTED(x) {
+  const words = x.split(" ");
+  const alphabetMap = {};
+  for (let i = "a".charCodeAt(), j = 1; i <= "z".charCodeAt(); i++, j++) {
+    alphabetMap[i] = j;
+  }
+  let highestScoringWord = { word: "", score: 0 };
+  words.forEach((w) => {
+    const chars = w.split("");
+    const sumOfChars = chars.reduce(
+      (count, char) => count + alphabetMap[char.charCodeAt()],
+      0
+    );
+    if (sumOfChars > highestScoringWord.score) {
+      highestScoringWord = { word: w, score: sumOfChars };
+    }
+  });
+
+  return highestScoringWord.word;
+}
+
+function high2(x) {
+  // let alphabets = [
+  //   'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+  //   'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+  // ];
+  let alphabets = "abcdefghijklmnopqrstuvwxyz"; //
+
+  let words = x.split(" ");
+  let highestScore = 0;
+  let highestScoreWord = "";
+
+  for (let word of words) {
+    let lettersSum = 0;
+
+    for (let letter of word) {
+      lettersSum += alphabets.indexOf(letter) + 1;
+    }
+
+    if (lettersSum > highestScore) {
+      highestScore = lettersSum;
+      highestScoreWord = word;
+    }
+  }
+
+  return highestScoreWord;
+}
