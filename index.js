@@ -1740,5 +1740,21 @@ Find the unique string
 Find The Unique
 */
 function findUniq(arr) {
-  // do magic
+  arr.sort((a, b) => a - b);
+  return arr[0] == arr[1] ? arr.pop() : arr[0];
+}
+
+function findUniq2(arr) {
+  let set = new Set(arr);
+  let arr2 = [...set];
+
+  let count = 0;
+  for (let i = 0; i < 4; i++) {
+    if (arr[i] == arr2[2]) count++;
+  }
+  return count == 1 ? arr2[0] : arr2[1];
+}
+
+function findUniq3(arr) {
+  return arr.find((n) => arr.indexOf(n) === arr.lastIndexOf(n));
 }
