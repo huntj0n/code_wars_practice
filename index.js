@@ -1772,3 +1772,35 @@ filter_list([1,'a','b',0,15]) == [1,0,15]
 filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 */
 const filter_list = (l) => l.filter((i) => typeof i == "number");
+
+/////////////
+// Unique In Order
+// {6 kyu}
+/////////////
+/*Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
+
+For example:
+
+uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
+uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
+uniqueInOrder([1,2,2,3,3])       == [1,2,3]
+*/
+const uniqueInOrder = (iterable) =>
+  [...iterable].filter((el, i) => el != iterable[i + 1]);
+
+var uniqueInOrder2 = function (iterable) {
+  return [...iterable].filter((a, i) => a !== iterable[i - 1]);
+};
+
+function uniqueInOrder3(it) {
+  var result = [];
+  var last;
+
+  for (var i = 0; i < it.length; i++) {
+    if (it[i] !== last) {
+      result.push((last = it[i]));
+    }
+  }
+
+  return result;
+}
