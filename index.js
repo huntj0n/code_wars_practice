@@ -1777,7 +1777,8 @@ const filter_list = (l) => l.filter((i) => typeof i == "number");
 // Unique In Order
 // {6 kyu}
 /////////////
-/*Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
+/*
+Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
 
 For example:
 
@@ -1804,3 +1805,34 @@ function uniqueInOrder3(it) {
 
   return result;
 }
+
+/////////////
+// Maximum subarray sum
+// {5 kyu}
+/////////////
+/*
+The maximum sum subarray problem consists in finding the maximum sum of a contiguous subsequence in an array or list of integers:
+
+maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4])
+// should be 6: [4, -1, 2, 1]
+Easy case is when the list is made up of only positive numbers and the maximum sum is the sum of the whole array. If the list is made up of only negative numbers, return 0 instead.
+
+Empty list is considered to have zero greatest sum. Note that the empty list or array is also a valid sublist/subarray.
+*/
+var maxSequence = function (arr) {};
+
+/////////////
+// Sentence Smash
+// {8 kyu}
+/////////////
+/*
+Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+
+Example
+['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
+*/
+function smash(words) {
+  return `${words.join(" ")}`;
+}
+
+const smash2 = (words) => words.join(" ");
