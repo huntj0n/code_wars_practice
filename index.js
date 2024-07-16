@@ -1866,3 +1866,25 @@ function domainName3(url) {
     .replace("www.", "")
     .split(".")[0];
 }
+
+/////////////
+// Reverse words
+// {7 kyu}
+/////////////
+/*
+Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+
+Examples
+"This is an example!" ==> "sihT si na !elpmaxe"
+"double  spaces"      ==> "elbuod  secaps"
+*/
+const reverseWords = (str) =>
+  str
+    .split(" ")
+    .map((el) => [...el].reverse().join(""))
+    .join(" ");
+function reverseWords2(str) {
+  // Go for it
+  //split words into seperate arrays
+  return str.split("").reverse().join("").split(" ").reverse().join(" ");
+}
