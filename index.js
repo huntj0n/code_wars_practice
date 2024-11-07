@@ -2223,3 +2223,18 @@ Calculate the sum of the numbers in the nth row of this triangle (starting at in
 function rowSumOddNumbers(n) {
   return n ** 3;
 }
+
+let rowSumOddNumbers2 = (n) => n ** 3;
+
+/////////////
+// Sort and Star
+// {8 kyu}
+/////////////
+/*
+You will be given a list of strings. You must sort it alphabetically (case-sensitive, and based on the ASCII values of the chars) and then return the first value.
+
+The returned value must be a string, and have "***" between each of its letters.
+
+You should not remove or add elements from/to the array.
+*/
+twoSort = (s) => s.sort()[0].split("").join("***");
