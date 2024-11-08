@@ -1,7 +1,5 @@
 "use strict";
 
-const { parse } = require("dotenv");
-
 //OPPOSITES ATTRACT
 // Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower each. If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
 
@@ -2276,3 +2274,16 @@ function friend(friends) {
 function friendFilter(friends) {
   return friends.filter((n) => n.length === 4);
 }
+
+/////////////
+// Grasshopper - Debug sayHello
+// {7 kyu}
+/////////////
+/*
+The starship Enterprise has run into some problem when creating a program to greet everyone as they come aboard. It is your job to fix the code and get the program working again!
+
+Example output:
+
+Hello, Mr. Spock
+*/
+const sayHello = (name) => `Hello, ${name}`;
