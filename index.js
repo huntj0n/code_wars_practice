@@ -2356,3 +2356,17 @@ const finalGradeImproved = (exam, projects) => {
     ? 75
     : 0;
 };
+
+/////////////
+// Name Shuffler
+// {8 kyu}
+/////////////
+/*
+Write a function that returns a string in which firstname is swapped with last name.
+
+Example(Input --> Output)
+
+"john McClane" --> "McClane john"
+*/
+nameShuffler = (str) => str.split(" ").reverse().join(" ");
+console.log(nameShuffler("john McClane"));
