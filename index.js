@@ -2370,3 +2370,19 @@ Example(Input --> Output)
 */
 nameShuffler = (str) => str.split(" ").reverse().join(" ");
 console.log(nameShuffler("john McClane"));
+
+/////////////
+// You only need one - Beginner
+// {8 kyu}
+/////////////
+/*
+You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+
+Array can contain numbers or strings. X can be either.
+
+Return true if the array contains the value, false if not.
+*/
+function check(a, x) {
+  return a.indexOf(x) > -1;
+}
+const check2 = (a, x) => a.includes(x);
