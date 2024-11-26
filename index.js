@@ -2404,3 +2404,54 @@ const twiceAsOld = (dadYearsOld, sonYearsOld) =>
 function twiceAsOld2(a, b) {
   return a > 2 * b ? a - 2 * b : 2 * b - a;
 }
+
+/////////////
+// Find the capitals
+// {7 kyu}
+/////////////
+/*
+Write a function that takes a single non-empty string of only lowercase and uppercase ascii letters (word) as its argument, and returns an ordered list containing the indices of all capital (uppercase) letters in the string.
+
+Example (Input --> Output)
+"CodEWaRs" --> [0,3,4,6]
+*/
+const capitals = function (word) {
+  let output = [];
+  let w = word.split("");
+
+  for (let i = 0; i < word.length; i++) {
+    if (w[i] == w[i].toUpperCase()) {
+      output.push(i);
+    }
+  }
+
+  return output;
+};
+
+const capitals2 = function (word) {
+  let a = word.split("");
+  let arr = [];
+  for (let i = 0; i < word.length; i++) {
+    if (a[i] === a[i].toUpperCase()) {
+      arr.push(i);
+    }
+  }
+  return arr;
+};
+
+const capitals3 = function (word) {
+  return word
+    .split("")
+    .map(function (l, i) {
+      if (l.toUpperCase() === l) return i;
+    })
+    .filter(function (i) {
+      return i != null;
+    });
+};
+
+const capitals4 = function (word) {
+  return word.split("").reduce(function (memo, v, i) {
+    return v === v.toUpperCase() ? memo.concat(i) : memo;
+  }, []);
+};
