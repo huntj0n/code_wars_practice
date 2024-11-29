@@ -2578,3 +2578,28 @@ function rentalCarCost2(d) {
 }
 
 const rentalCarCost3 = (d) => d * 40 - (d > 6 ? 50 : d > 2 ? 20 : 0);
+
+/////////////
+// TSmall enough? - Beginner
+// {7 kyu}
+/////////////
+/*
+You will be given an array and a limit value. You must check that all values in the array are below or equal to the limit value. If they are, return true. Else, return false.
+
+You can assume all values in the array are numbers.
+*/
+function smallEnough(a, limit) {
+  return Math.max(...a) <= limit;
+}
+
+smallEnough2 = (a, l) => a.every((e) => e <= l);
+
+//closest to my original. the initial return false was missing.
+function smallEnough3(a, limit) {
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] > limit) {
+      return false;
+    }
+  }
+  return true;
+}
